@@ -41,7 +41,7 @@ sudo make install
 cd .. && cd ..
 rm -rf tmp
 
-sudo add-apt-repository ppa:bitcoin/bitcoin
+sudo add-apt-repository ppa:pivx/berkeley-db4
 sudo apt-get update
 sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
 
