@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# use: wget  && chmod +x install_libdb4.8.sh && ./install_libdb4.8.sh amd64 && rm install_libdb4.8.sh
+# use: wget https://raw.githubusercontent.com/Zero-Dynamics/installation-tools/master/install_libdb4.8.sh && chmod +x install_libdb4.8.sh && ./install_libdb4.8.sh amd64 && rm install_libdb4.8.sh
 
 if [ "$#" -ne "1" ]; then
 	echo "usage :"
