@@ -1,15 +1,15 @@
 #!/bin/bash
 
-echo "This script will install the packages and libraries required to build the OdynStock Core wallet dependancies"
-echo "Do you wish to clone 'Odynstock/odynstock-core' and build the dependancies for the master branch as well?"
+echo "This script will install the packages and libraries required to build the Stock Core wallet dependancies"
+echo "Do you wish to clone 'stock-core' and build the dependancies for the master branch as well?"
 
 read -p 'Enter Y for yes or anything else to decline: ' uservar
 
 if [ $uservar == "Y" ]
 then
-  echo "The script will clone OdynStock Core and attempt to build the depends"
+  echo "The script will clone Stock Core and attempt to build the depends"
 else
-  echo "The script will not clone OdynStock Core"
+  echo "The script will not clone Stock Core"
 fi
 
 sudo apt-get update
@@ -51,8 +51,8 @@ if [ $uservar == "Y" ] libdb++
 then
   cd ~
   #clone and build all the deps required
-  git clone https://github.com/zero-dynamics/odynstock-core
-  cd odynstock-core
+  git clone https://github.com/zero-dynamics/stock-core
+  cd stock-core
   git checkout master
   cd depends
   make
