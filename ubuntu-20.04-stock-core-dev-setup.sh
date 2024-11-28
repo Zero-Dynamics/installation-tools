@@ -47,7 +47,7 @@ sudo apt-get install libdb-dev libdb++-dev
 #install zmq so we can run our python tests
 sudo apt-get install python3-zmq
 
-if [ $uservar == "Y" ] libdb++
+if [ $uservar == "Y" ]
 then
   cd ~
   #clone and build all the deps required
