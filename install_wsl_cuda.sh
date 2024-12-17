@@ -18,7 +18,10 @@ sudo apt-get -y install cuda-toolkit-12-6
 
 # Step 3: Set up PATH variables for CUDA
 echo "Step 3: Setting up PATH for CUDA..."
-echo 'export PATH=/usr/local/cuda-12.6/bin${PATH:+:${PATH}}' >> ~/.bashrc && \
+# Check if the PATH entry already exists, then add it only if not
+grep -qxF 'export PATH=/usr/local/cuda-12.6/bin${PATH:+:${PATH}}' ~/.bashrc || \
+echo 'export PATH=/usr/local/cuda-12.6/bin${PATH:+:${PATH}}' >> ~/.bashrc
+# Apply the changes to the current session
 source ~/.bashrc
 
 # Step 4: Install NVIDIA CUDA Toolkit
@@ -27,10 +30,12 @@ sudo apt install -y nvidia-cuda-toolkit
 
 # Step 5: Install NVIDIA Utilities for Desktop Environment
 echo "Step 5: Installing NVIDIA Utilities for Desktop Environment..."
-sudo apt install -y nvidia-utils-550
+sudo apt install -y nvidia-utils-550 && \
+sudo apt install -y nvidia-settings
 
 # Check if NVIDIA utilities and CUDA installation are successful
 echo "Checking NVIDIA installation..."
 nvidia-smi
 
 echo "CUDA installation and setup completed successfully!"
+nvidia-settings
