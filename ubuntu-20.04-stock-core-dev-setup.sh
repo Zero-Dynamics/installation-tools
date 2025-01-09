@@ -17,7 +17,10 @@ sudo apt-get upgrade -y
 
 sudo apt-get install -y git build-essential libcurl3-dev libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libunbound-dev libattr1-dev libgmp-dev libsodium-dev libseccomp-dev libcap-dev cmake
 
-sudo apt-get install -y libboost-all-dev
+sudo add-apt-repository -y ppa:mhier/libboost-latest
+sudo apt update
+
+sudo apt install -y libboost1.81-all-dev
 
 sudo apt-get install -y libminiupnpc-dev
 sudo apt-get install -y libzmq3-dev
