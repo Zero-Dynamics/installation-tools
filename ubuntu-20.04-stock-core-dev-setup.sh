@@ -39,16 +39,16 @@ wget https://nlnetlabs.nl/downloads/unbound/unbound-1.7.3.tar.gz
 tar xvfz unbound-1.7.3.tar.gz
 cd unbound-1.7.3/
 ./configure
-make
+make -j$(nproc)
 sudo make install
 cd .. && cd ..
 rm -rf tmp
 
 #install db
-sudo apt-get install libdb-dev libdb++-dev
+sudo apt-get install -y libdb-dev libdb++-dev
 
 #install zmq so we can run our python tests
-sudo apt-get install python3-zmq
+sudo apt-get install -y python3-zmq
 
 if [ $uservar == "Y" ]
 then
@@ -63,4 +63,5 @@ then
   ./autogen.sh
   ./configure --enable-debug --enable-tests --prefix=`pwd`/depends/`uname -m`-pc-linux-gnu
   make -j$(nproc)
+  sudo make install
 fi
